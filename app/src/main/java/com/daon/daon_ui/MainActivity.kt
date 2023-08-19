@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener {
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+//        supportActionBar?.apply {
+//            //setBackgroundDrawable(ContextCompat.getDrawable(this@MainActivity, R.color.custom_action_bar_color))
+//            title = "다온" // 원하는 타이틀 설정
+//        }
         navView.setupWithNavController(navController)
     }
 
