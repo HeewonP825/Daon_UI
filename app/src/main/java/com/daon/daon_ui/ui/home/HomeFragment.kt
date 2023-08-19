@@ -1,9 +1,12 @@
 package com.daon.daon_ui.ui.home
 
+import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -42,6 +45,43 @@ class HomeFragment : Fragment() {
         binding.homeMeetingRv.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             adapter = meetingAdapter
+        }
+
+        // Spinner 1 설정
+        val spinner1 = binding.sortCondition1Spinner
+        val sortCondition1Options = arrayOf("전체", "Option 2", "Option 3")
+        val spinnerAdapter1 = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, sortCondition1Options)
+        spinnerAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner1.adapter = spinnerAdapter1
+
+        // Spinner 2 설정
+        val spinner2 = binding.sortCondition2Spinner
+        val sortCondition2Options = arrayOf("날짜순", "Option B", "Option C")
+        val spinnerAdapter2 = ArrayAdapter(requireContext(), R.layout.simple_spinner_item, sortCondition2Options)
+        spinnerAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner2.adapter = spinnerAdapter2
+
+        // Spinner 아이템 선택 리스너
+        spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selectedOption = sortCondition1Options[position]
+                // 선택된 옵션에 따른 동작 수행
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // 아무것도 선택되지 않았을 때의 동작
+            }
+        }
+
+        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val selectedOption = sortCondition2Options[position]
+                // 선택된 옵션에 따른 동작 수행
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // 아무것도 선택되지 않았을 때의 동작
+            }
         }
 
 
