@@ -15,17 +15,17 @@
         android:id="@+id/navigation_allMeeting"
         android:name="com.daon.daon_ui.ui.allMeeting.AllMeetingFragment"
         android:label="@string/title_allMeeting"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_all_meeting" />
 
     <fragment
         android:id="@+id/navigation_allFeed"
         android:name="com.daon.daon_ui.ui.allFeed.AllFeedFragment"
         android:label="@string/title_allFeed"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_all_feed" />
 
     <fragment
         android:id="@+id/navigation_myPage"
         android:name="com.daon.daon_ui.ui.myPage.MyPageFragment"
         android:label="@string/title_myPage"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_all_feed" />
 </navigation>

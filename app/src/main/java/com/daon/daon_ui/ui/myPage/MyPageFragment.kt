@@ -8,10 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.daon.daon_ui.databinding.FragmentHomeBinding
+import com.daon.daon_ui.databinding.FragmentMyPageBinding
 
 class MyPageFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentMyPageBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,10 +26,10 @@ class MyPageFragment : Fragment() {
         val homeViewModel =
             ViewModelProvider(this).get(MyPageViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentMyPageBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.textMyPage
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

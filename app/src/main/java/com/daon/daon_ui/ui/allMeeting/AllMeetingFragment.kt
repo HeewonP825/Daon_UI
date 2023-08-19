@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.daon.daon_ui.databinding.FragmentDashboardBinding
+import com.daon.daon_ui.databinding.FragmentAllMeetingBinding
 
 class AllMeetingFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
+    private var _binding: FragmentAllMeetingBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,10 +25,10 @@ class AllMeetingFragment : Fragment() {
         val dashboardViewModel =
             ViewModelProvider(this).get(AllMeetingViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentAllMeetingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
+        val textView: TextView = binding.textAllMeeting
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
