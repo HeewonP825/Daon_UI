@@ -10,4 +10,21 @@
     <string name="profile_name">김다온</string>
     <string name="home_explain">언제 어디서나, 코디네이터와 함꼐 베리어프리된 여가\n모임 앱 다온과 함께 공연 관람, 여행 등을 다양하게\n즐기세요.</string>
     <string name="home_more">더 보기</string>
+    <string name="home_available_meeting_tv">참여 가능한 추천 모임</string>
+    <string name="sort_condition_1">정렬 기준1</string>
+    <string name="sort_condition_2">정렬 기준2</string>
+    
+    //item_meeting
+    <string name="meeting_location">대구 수성</string>
+    <string name="meeting_date">2023-06-07</string>
+    <string name="meeting_time">10:30</string>
+    <string name="meeting_tag1">시각</string>
+    <string name="meeting_tag2">음악</string>
+    <string name="meeting_title">생명 사랑 음악회</string>
+    <string name="meeting_explain">시각장애인 5인조 밴드의 악보 없는 음악회\n에 초대합니다. 사랑 가득한 선율을 마음껏\n 느낄...</string>
+    <string name="meeting_avail_member">정원</string>
+    <string name="meeting_member">10</string>
+    <string name="meeting_member_unit">명</string>
+    <string name="meeting_price">16,000</string>
+    <string name="meeting_price_unit">원</string>
 </resources>
