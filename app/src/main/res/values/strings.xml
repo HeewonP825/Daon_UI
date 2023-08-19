@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">다온</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">홈</string>
+    <string name="title_allMeeting">전체 모임</string>
+    <string name="title_allFeed">피드 보기</string>
+    <string name="title_myPage">내정보</string>
 </resources>
