@@ -10,7 +10,6 @@
         android:id="@+id/meeting_thumbnail"
         android:layout_width="96dp"
         android:layout_height="144dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/meeting_sample1"
         app:layout_constraintStart_toStartOf="parent"

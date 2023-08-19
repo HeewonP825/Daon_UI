@@ -16,4 +16,6 @@
     <color name="main_button_enabled_stroke">#E7ECF3</color>
     <color name="enabled_text">#A7B0C0</color>
 
+    <color name="tabbar_title">#a0a0a0</color>
+
 </resources>

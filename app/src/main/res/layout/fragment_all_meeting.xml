@@ -117,6 +117,57 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/allmeeting_viewing_art_btn" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allmeeting_viewing_sport_btn"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/mainColor"
+            app:tabTextColor="#a0a0a0"
+            app:tabMode="scrollable" />
+
+        <Spinner
+            android:id="@+id/sort_condition1_spinner"
+            style="@style/PartySortSpinner"
+            android:layout_width="@dimen/party_sort_spinner_width"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/sort_condition_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+        <Spinner
+            android:id="@+id/sort_condition2_spinner"
+            style="@style/PartySortSpinner"
+            android:layout_width="@dimen/party_sort_spinner_width"
+            android:layout_height="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/sort_condition_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/all_meeting_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sort_condition1_spinner"
+            tools:listitem="@layout/item_meeting"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
