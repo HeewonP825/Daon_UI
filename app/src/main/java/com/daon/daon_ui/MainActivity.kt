@@ -1,8 +1,10 @@
 package com.daon.daon_ui
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.view.ViewTreeObserver
+import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -51,11 +53,13 @@ class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener {
                 R.id.navigation_home, R.id.navigation_allMeeting, R.id.navigation_allFeed, R.id.navigation_myPage
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-//        supportActionBar?.apply {
-//            //setBackgroundDrawable(ContextCompat.getDrawable(this@MainActivity, R.color.custom_action_bar_color))
-//            title = "다온" // 원하는 타이틀 설정
-//        }
+        //setupActionBarWithNavController(navController, appBarConfiguration)
+        supportActionBar?.apply {
+            //setBackgroundDrawable(ContextCompat.getDrawable(this@MainActivity, R.color.white))
+            //val customTypeface = Typeface.createFromAsset(font, kotra_bold.otf)
+            title = "다온" // 원하는 타이틀 설정
+            //setTitle(ContextCompat.getColor(this@MainActivity, R.color.mainColor))
+        }
         navView.setupWithNavController(navController)
     }
 

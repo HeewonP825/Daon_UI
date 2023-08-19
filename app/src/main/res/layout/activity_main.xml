@@ -12,11 +12,12 @@
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
         app:contentInsetStart="0dp"
-        style="@style/CustomActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/white"
+        app:titleTextColor="@color/mainColor"
+        app:titleTextAppearance="@font/kotra_bold"
         android:orientation="horizontal">
 
     </androidx.appcompat.widget.Toolbar>
