@@ -27,7 +27,7 @@ class MeetingAdapter(private val meetings: List<Meeting>) : RecyclerView.Adapter
         private val binding: ItemMeetingBinding = ItemMeetingBinding.bind(itemView)
 
         fun bind(meeting: Meeting) {
-            binding.meetingThumbnail.setImageResource(R.drawable.meeting_sample1)
+            binding.meetingThumbnail.setImageResource(meeting.meetingImg) // 이미지 동적으로 설정
             binding.meetingLocation.text = meeting.meetingLocation
             binding.meetingDate.text = meeting.meetingDate
             binding.meetingTime.text = meeting.meetingTime

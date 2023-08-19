@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.daon.daon_ui.R
 
 data class Meeting(
-    val meetingImg: String,
+    val meetingImg: Int,
     val meetingLocation: String,
     val meetingDate: String,
     val meetingTime: String,

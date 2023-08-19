@@ -95,17 +95,23 @@ class HomeFragment : Fragment() {
 
     // 샘플 데이터 리스트 생성
     private fun getSampleMeetings(): List<Meeting> {
+
+        val resourceId1 = resources.getIdentifier("meeting_sample1", "drawable", requireContext().packageName)
+        val resourceId2 = resources.getIdentifier("meeting_sample2", "drawable", requireContext().packageName)
+        val resourceId3 = resources.getIdentifier("meeting_sample3", "drawable", requireContext().packageName)
+
         return listOf(
-            Meeting("R.drawable.meeting_sample1", "대구 수성", "2023-06-07", "10:30",
+            Meeting(resourceId1, "대구 수성", "2023-06-07", "10:30",
                 "시각", "음악", "생명 사랑 음악회", "시각장애인 5인조 밴드의 악보 없는 음악회\\n에 초대합니다. 사랑 가득한 선율을 마음껏\\n 느낄...",
                 "10", "32,000", "16,000"),
-            Meeting("R.drawable.meeting_sample1", "대구 수성", "2023-06-07", "10:30",
+            Meeting(resourceId2, "대구 수성", "2023-06-07", "10:30",
                 "시각·발달·청각·지체", "여가유형", "양욱진 첼로 리사이클링 공연", "양욱진 첼로리스트의 리사이클링 공연을 함\\n께 관람해요. 잔잔한 선율과 굵은 소리로 아\\n름...",
                 "9", "28,600", "14,200"),
-            Meeting("R.drawable.meeting_sample3", "대구 수성", "2023-06-07", "10:30",
+            Meeting(resourceId3, "대구 수성", "2023-06-07", "10:30",
                 "시각", "음악", "생명 사랑 음악회", "시각장애인 5인조 밴드의 악보 없는 음악회\\n에 초대합니다. 사랑 가득한 선율을 마음껏\\n 느낄...",
                 "10", "32,000", "16,000")
             // 추가적인 항목들을 원하는 만큼 추가
         )
     }
+
 }
