@@ -13,7 +13,7 @@
     <string name="home_available_meeting_tv">참여 가능한 추천 모임</string>
     <string name="sort_condition_1">정렬 기준1</string>
     <string name="sort_condition_2">정렬 기준2</string>
-    
+
     //item_meeting
     <string name="meeting_location">대구 수성</string>
     <string name="meeting_date">2023-06-07</string>
@@ -25,6 +25,9 @@
     <string name="meeting_avail_member">정원</string>
     <string name="meeting_member">10</string>
     <string name="meeting_member_unit">명</string>
+    <string name="meeting_original_price">32,000</string>
     <string name="meeting_price">16,000</string>
     <string name="meeting_price_unit">원</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

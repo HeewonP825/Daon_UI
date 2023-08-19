@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/meeting_thumbnail"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:text="@string/meeting_date"
         android:textSize="11sp"
@@ -55,9 +55,12 @@
 
     <TextView
         android:id="@+id/meeting_tag1"
-        android:layout_width="38dp"
+        android:layout_width="wrap_content"
         android:layout_height="27dp"
         android:layout_marginStart="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/bg_meeting_tag1"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:gravity="center_horizontal|center_vertical"
@@ -65,125 +68,155 @@
         android:textColor="@color/white"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
-        tools:layout_editor_absoluteY="35dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/meeting_tag2"
-        android:layout_width="38dp"
+        android:layout_width="wrap_content"
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/bg_meeting_tag2"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/meeting_tag2"
         android:textColor="@color/white"
         android:textSize="10sp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         app:layout_constraintStart_toEndOf="@+id/meeting_tag1"
-        tools:layout_editor_absoluteY="35dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/meeting_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_title"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/meeting_detail"
         app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
-        tools:layout_editor_absoluteY="53dp" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_tag1" />
 
     <TextView
         android:id="@+id/meeting_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:text="@string/meeting_explain"
         android:textColor="@color/black"
         android:textSize="13sp"
-        app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
-        tools:layout_editor_absoluteY="78dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
+        app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/participate_member_sample"
         app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
-        tools:layout_editor_absoluteY="144dp" />
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:gravity="center"
         android:text="@string/meeting_avail_member"
-        android:textSize="13sp"
         android:textColor="#333333"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
 
     <TextView
         android:id="@+id/meeting_member"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_member"
-        android:textSize="13dp"
         android:textColor="#333333"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:text="@string/meeting_member_unit"
         android:textColor="#333333"
         android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
         app:layout_constraintStart_toEndOf="@+id/meeting_member"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
 
     <TextView
         android:id="@+id/meeting_original_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/noto_sans_kr_regular"
-        android:text="32,000"
+        android:text="@string/meeting_original_price"
         android:textColor="#FF1717"
         android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        tools:layout_editor_absoluteY="140dp" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
 
     <TextView
         android:id="@+id/meeting_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_price"
         android:textColor="#333333"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
         app:layout_constraintStart_toEndOf="@+id/meeting_original_price"
-        tools:layout_editor_absoluteY="137dp" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_price_unit"
         android:textColor="#333333"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
         app:layout_constraintStart_toEndOf="@+id/meeting_price"
-        tools:layout_editor_absoluteY="137dp" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/main_button_enabled_stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
