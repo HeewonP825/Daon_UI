@@ -2,6 +2,7 @@ package com.daon.daon_ui
 
 import android.graphics.Typeface
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.TextView
@@ -17,7 +18,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.daon.daon_ui.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener {
+class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener, BottomNavigationView.OnNavigationItemSelectedListener {
+
 
     private lateinit var binding: ActivityMainBinding
 
@@ -53,17 +55,65 @@ class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener {
                 R.id.navigation_home, R.id.navigation_allMeeting, R.id.navigation_allFeed, R.id.navigation_myPage
             )
         )
+
         //setupActionBarWithNavController(navController, appBarConfiguration)
-        supportActionBar?.apply {
-            setBackgroundDrawable(ContextCompat.getDrawable(this@MainActivity, R.color.white))
-            //val customTypeface = Typeface.createFromAsset(font, kotra_bold.otf)
-            title = "다온" // 원하는 타이틀 설정
-            //setTitle(ContextCompat.getColor(this@MainActivity, R.color.mainColor))
-        }
+        // 폰트 파일 로드
+        //val customTypeface = Typeface.createFromAsset(assets, "@font/kotra_bold.otf")
+
+        //액션바 커스터마이즈
+//        supportActionBar?.apply {
+//            setBackgroundDrawable(ContextCompat.getDrawable(this@MainActivity, R.color.white))
+//            title = "다온" // 원하는 타이틀 설정
+//            val titleTextView = findViewById<TextView>(resources.getIdentifier("action_bar_title", "id", packageName))
+//            titleTextView?.apply {
+//                setTextColor(ContextCompat.getColor(this@MainActivity, R.color.mainColor)) // 색 설정
+//            }
+//        }
         navView.setupWithNavController(navController)
+        navView.setupWithNavController(navController)
+        navView.setOnNavigationItemSelectedListener { item ->
+            onNavigationItemSelected(item)
+        }
     }
 
     override fun onPreDraw(): Boolean {
         return true
     }
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.navigation_home -> {
+                setToolbarTitle("다온") // 원하는 타이틀 설정
+                navigateToFragment(R.id.navigation_home) // 프래그먼트 이동
+                return true
+            }
+            R.id.navigation_allMeeting -> {
+                setToolbarTitle("모임")
+                navigateToFragment(R.id.navigation_allMeeting)
+                return true
+            }
+            R.id.navigation_allFeed -> {
+                setToolbarTitle("피드")
+                navigateToFragment(R.id.navigation_allFeed)
+                return true
+            }
+            R.id.navigation_myPage -> {
+                setToolbarTitle("내정보")
+                navigateToFragment(R.id.navigation_myPage)
+                return true
+            }
+        }
+        return false
+    }
+
+    private fun setToolbarTitle(title: String) {
+        val toolbarTitle = findViewById<TextView>(R.id.toolbar_title)
+        toolbarTitle.text = title
+    }
+
+    private fun navigateToFragment(itemId: Int) {
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navController.navigate(itemId)
+    }
+
+
 }

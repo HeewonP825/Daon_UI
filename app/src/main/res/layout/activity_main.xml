@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
+        android:elevation="5dp"
         app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,6 +20,21 @@
         app:titleTextColor="@color/mainColor"
         app:titleTextAppearance="@font/kotra_bold"
         android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다온"
+            android:paddingLeft="10sp"
+            android:paddingTop="4dp"
+            android:textColor="@color/mainColor"
+            android:textSize="24sp"
+            android:fontFamily="@font/kotra_bold"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:layout_marginLeft="10dp"/>
+
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -39,12 +55,11 @@
         android:id="@+id/nav_host_fragment_activity_main"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:navGraph="@navigation/nav_graph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
