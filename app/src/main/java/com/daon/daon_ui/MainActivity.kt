@@ -51,14 +51,7 @@ class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener {
                 R.id.navigation_home, R.id.navigation_allMeeting, R.id.navigation_allFeed, R.id.navigation_myPage
             )
         )
-
-        setSupportActionBar(binding.toolbar) // Set custom toolbar as the support action bar
-
-        // Add destination changed listener to update action bar title
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            supportActionBar?.title = destination.label
-        }
-
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 
