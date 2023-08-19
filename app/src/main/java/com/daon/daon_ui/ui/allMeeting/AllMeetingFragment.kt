@@ -14,13 +14,19 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.daon.daon_ui.R
 import com.daon.daon_ui.databinding.FragmentAllMeetingBinding
+import com.daon.daon_ui.ui.home.Meeting
+import com.daon.daon_ui.ui.home.MeetingAdapter
 import com.google.android.material.tabs.TabLayout
 
 class AllMeetingFragment : Fragment() {
 
     private var _binding: FragmentAllMeetingBinding? = null
+
+    private lateinit var meetingAdapter: MeetingAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -77,6 +83,13 @@ class AllMeetingFragment : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // 아무것도 선택되지 않았을 때의 동작
             }
+        }
+
+        // RecyclerView 초기화
+        meetingAdapter = MeetingAdapter(getSampleMeetings()) // 여러 항목을 가진 데이터 리스트 전달
+        binding.allMeetingRv.apply {
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            adapter = meetingAdapter
         }
 
         val tabLayout = root.findViewById<TabLayout>(R.id.tabLayout)
@@ -159,5 +172,25 @@ class AllMeetingFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun getSampleMeetings(): List<Meeting> {
+
+        val resourceId1 = resources.getIdentifier("all_meeting_img2", "drawable", requireContext().packageName)
+        val resourceId2 = resources.getIdentifier("all_meeting_img1", "drawable", requireContext().packageName)
+        val resourceId3 = resources.getIdentifier("all_meeting_img3", "drawable", requireContext().packageName)
+
+        return listOf(
+            Meeting(resourceId1, "대구 수성", "2023-06-07", "10:30",
+                "청각", "미술", "청각 장애인을 위한 웹툰 초급반", "청각장애인을 위해 준비된 웹툰 클래스에 초\\n대합니다. 기본 구도를 익히면 웹툰도 어렵\\n지...",
+                "5", "28,600", "14,200"),
+            Meeting(resourceId2, "대구 수성", "2023-06-07", "10:30",
+                "전체", "요리", "내 손으로 만드는 빵, 아름드리 베이킹", "다양한 빵들을 직접 만들고 먹을 수 있는 베\\n이킹 클래스에 초대합니다. 갓 구운 맛있\\n는...",
+                "5", "28,600", "14,200"),
+            Meeting(resourceId3, "대구 수성", "2023-06-07", "10:30",
+                "시각", "음악", "생명 사랑 음악회", "시각장애인 5인조 밴드의 악보 없는 음악회\\n에 초대합니다. 사랑 가득한 선율을 마음껏\\n 느낄...",
+                "10", "32,000", "16,000")
+            // 추가적인 항목들을 원하는 만큼 추가
+        )
     }
 }
