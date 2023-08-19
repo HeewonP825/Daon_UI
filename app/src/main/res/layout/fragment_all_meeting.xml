@@ -4,12 +4,118 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.allMeeting.AllMeetingFragment">
+
+        <Button
+            android:id="@+id/allmeeting_all_btn"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_allmeeting_category_btn"
+            android:drawableLeft="@drawable/ic_all_meeting_list"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:paddingLeft="16dp"
+            android:text="@string/allmeeting_category_all"
+            android:textColor="@color/mainColor"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/allmeeting_art_btn"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_allmeeting_category_btn"
+            android:drawableLeft="@drawable/ic_all_meeting_arts"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:paddingLeft="16dp"
+            android:paddingRight="12dp"
+            android:text="@string/allmeeting_category_arts"
+            android:textColor="@color/mainColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/allmeeting_viewing_art_btn"
+            app:layout_constraintStart_toEndOf="@+id/allmeeting_all_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/allmeeting_viewing_art_btn"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_allmeeting_category_btn"
+            android:drawableLeft="@drawable/ic_all_meeting_music"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:paddingLeft="16dp"
+            android:paddingRight="8dp"
+            android:text="@string/allmeeting_category_viewing_art"
+            android:textColor="@color/mainColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/allmeeting_sport_btn"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_allmeeting_category_btn"
+            android:drawableLeft="@drawable/ic_all_meeting_sports"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:paddingLeft="16dp"
+            android:paddingRight="8dp"
+            android:text="@string/allmeeting_category_sports"
+            android:textColor="@color/mainColor"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allmeeting_all_btn" />
+
+        <Button
+            android:id="@+id/allmeeting_viewing_sport_btn"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_allmeeting_category_btn"
+            android:drawableLeft="@drawable/ic_all_meeting_clap"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:paddingLeft="16dp"
+            android:paddingRight="8dp"
+            android:text="@string/allmeeting_category_viewing_sports"
+            android:textColor="@color/mainColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/allmeeting_etc_btn"
+            app:layout_constraintStart_toEndOf="@+id/allmeeting_sport_btn"
+            app:layout_constraintTop_toBottomOf="@+id/allmeeting_art_btn" />
+
+        <Button
+            android:id="@+id/allmeeting_etc_btn"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_allmeeting_category_btn"
+            android:drawableLeft="@drawable/ic_all_meeting_etc"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:paddingLeft="16dp"
+            android:paddingRight="8dp"
+            android:text="@string/allmeeting_category_etc"
+            android:textColor="@color/mainColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allmeeting_viewing_art_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

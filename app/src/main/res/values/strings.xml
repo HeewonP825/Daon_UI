@@ -28,6 +28,12 @@
     <string name="meeting_original_price">32,000</string>
     <string name="meeting_price">16,000</string>
     <string name="meeting_price_unit">원</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+   
+    //allMeeting
+    <string name="allmeeting_category_all">전체활동</string>
+    <string name="allmeeting_category_arts"> 예술활동</string>
+    <string name="allmeeting_category_viewing_art">예술관람</string>
+    <string name="allmeeting_category_sports">운동활동</string>
+    <string name="allmeeting_category_viewing_sports">운동관람</string>
+    <string name="allmeeting_category_etc">기타활동</string>
 </resources>
