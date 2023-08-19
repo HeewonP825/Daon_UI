@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener {
         )
         //setupActionBarWithNavController(navController, appBarConfiguration)
         supportActionBar?.apply {
-            //setBackgroundDrawable(ContextCompat.getDrawable(this@MainActivity, R.color.white))
+            setBackgroundDrawable(ContextCompat.getDrawable(this@MainActivity, R.color.white))
             //val customTypeface = Typeface.createFromAsset(font, kotra_bold.otf)
             title = "다온" // 원하는 타이틀 설정
             //setTitle(ContextCompat.getColor(this@MainActivity, R.color.mainColor))

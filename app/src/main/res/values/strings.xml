@@ -4,4 +4,10 @@
     <string name="title_allMeeting">전체 모임</string>
     <string name="title_allFeed">피드 보기</string>
     <string name="title_myPage">내정보</string>
+
+    // home
+    <string name="good_morning">👋 굿모닝!</string>
+    <string name="profile_name">김다온</string>
+    <string name="home_explain">언제 어디서나, 코디네이터와 함꼐 베리어프리된 여가\n모임 앱 다온과 함께 공연 관람, 여행 등을 다양하게\n즐기세요.</string>
+    <string name="home_more">더 보기</string>
 </resources>
