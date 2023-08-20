@@ -20,10 +20,9 @@ import com.daon.daon_ui.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private val splashContent by lazy { findViewById<View>(android.R.id.content) }
 
     private lateinit var binding: ActivityMainBinding
-
-    private val splashContent by lazy { findViewById<View>(android.R.id.content) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +69,6 @@ class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener, Bo
 //            }
 //        }
         navView.setupWithNavController(navController)
-        navView.setupWithNavController(navController)
         navView.setOnNavigationItemSelectedListener { item ->
             onNavigationItemSelected(item)
         }
@@ -114,6 +112,5 @@ class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener, Bo
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navController.navigate(itemId)
     }
-
 
 }

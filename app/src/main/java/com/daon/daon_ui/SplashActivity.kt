@@ -19,7 +19,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
         // 스플래시 화면 클릭 시 메인 액티비티로 이동
         findViewById<ConstraintLayout>(R.id.splash_activity).setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
