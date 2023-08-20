@@ -18,7 +18,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.daon.daon_ui.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), ViewTreeObserver.OnPreDrawListener, BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener, ViewTreeObserver.OnPreDrawListener {
 
     private val splashContent by lazy { findViewById<View>(android.R.id.content) }
 
