@@ -3,7 +3,6 @@ package com.daon.daon_ui.ui.allMeeting
 import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -156,7 +155,7 @@ class AllMeetingFragment : Fragment() {
 
     @SuppressLint("MissingInflatedId")
     private fun createTabView(text: String, iconResId: Int): View {
-        val tabView = layoutInflater.inflate(R.layout.custom_tab_layout, null)
+        val tabView = layoutInflater.inflate(R.layout.custom_tab_layout_allmeeting, null)
 
         val textView = tabView.findViewById<TextView>(R.id.tabText)
         val iconView = tabView.findViewById<ImageView>(R.id.tabIcon)
