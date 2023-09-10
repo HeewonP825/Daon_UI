@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.daon.daon_ui.R
 
-data class Meeting(
+data class MypgMeeting(
     val meetingImg: Int,
     val meetingLocation: String,
     val meetingDate: String,
@@ -19,4 +19,4 @@ data class Meeting(
     val meetingMember: String,
     val meetingOriginalPrice: String,
     val meetingPrice: String
-    )
+)
