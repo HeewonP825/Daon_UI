@@ -32,6 +32,8 @@ class AllFeedAdapter(private val allFeeds: List<AllFeed>) : RecyclerView.Adapter
             binding.allfeedProfileImg.setImageResource(allfeed.allfeedProfileImg) // 이미지 동적으로 설정
             binding.allfeedNickname.text = allfeed.allfeedNickmane
             binding.allfeedIntroduce.text = allfeed.allfeedIntroduce
+            binding.allfeedLike.setImageResource(allfeed.allfeedLike)
+            binding.allfeedMore.setImageResource(allfeed.allfeedMore)
             binding.allfeedImg.setImageResource(allfeed.allfeedImg)
             binding.allfeedContext.text = allfeed.allfeedContext
             binding.allfeedTag.text = allfeed.allfeedTag
