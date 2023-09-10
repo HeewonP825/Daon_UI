@@ -59,23 +59,31 @@ class AllFeedFragment : Fragment() {
     private fun getSampleMeetings(): List<AllFeed> {
 
         val profileImg = resources.getIdentifier("feed_profile_Img", "drawable", requireContext().packageName)
-        val feedImg = resources.getIdentifier("all_meeting_img3", "drawable", requireContext().packageName)
+        val feedImg1 = resources.getIdentifier("allfeed_img1", "drawable", requireContext().packageName)
+        val feedImg2 = resources.getIdentifier("allfeed_img2", "drawable", requireContext().packageName)
         val likeButton = resources.getIdentifier("ic_allfeed_like_btn", "drawable", requireContext().packageName)
         val moreButton = resources.getIdentifier("ic_allfeed_more", "drawable", requireContext().packageName)
 
         return listOf(
-            AllFeed(profileImg, "해맑은 유미", "한줄소개글 표시..", likeButton, moreButton, feedImg,
+//            AllFeed(profileImg, "해맑은 유미", "한줄소개글 표시..", likeButton, moreButton, feedImgetc,
+//                "Feugiat in feugiat mauris malesuada quis est\n sodales adipiscing.\n" +
+//                        "Tellus tincidunt Odio ultrices\n nibh sed accumsan. In donec felis sagittis tempus.\n" +
+//                        "Elit, enim, et arcu at ultrices cursus arcu dictum\n purus...", "@양욱진 첼로 리사이클링 공연"),
+
+            AllFeed("해맑은 유미", "한줄소개글 표시..", false, feedImg1,
                 "Feugiat in feugiat mauris malesuada quis est\n sodales adipiscing.\n" +
                         "Tellus tincidunt Odio ultrices\n nibh sed accumsan. In donec felis sagittis tempus.\n" +
                         "Elit, enim, et arcu at ultrices cursus arcu dictum\n purus...", "@양욱진 첼로 리사이클링 공연"),
-            AllFeed(profileImg, "해맑은 유미", "한줄소개글 표시..", likeButton, moreButton, feedImg,
+
+            AllFeed("강산들", "한줄소개글 표시..", true, feedImg1,
                 "Feugiat in feugiat mauris malesuada quis est\n sodales adipiscing.\n" +
                         "Tellus tincidunt Odio ultrices\n nibh sed accumsan. In donec felis sagittis tempus.\n" +
-                        "Elit, enim, et arcu at ultrices cursus arcu dictum\n purus...", "@양욱진 첼로 리사이클링 공연"),
-            AllFeed(profileImg, "해맑은 유미", "한줄소개글 표시..", likeButton, moreButton, feedImg,
+                        "Elit, enim, et arcu at ultrices cursus arcu dictum\n purus...", "@발달장애인 체육대회"),
+
+            AllFeed("해맑은 유미", "한줄소개글 표시..", false, feedImg2,
                 "Feugiat in feugiat mauris malesuada quis est\n sodales adipiscing.\n" +
                         "Tellus tincidunt Odio ultrices\n nibh sed accumsan. In donec felis sagittis tempus.\n" +
-                        "Elit, enim, et arcu at ultrices cursus arcu dictum\n purus...", "@양욱진 첼로 리사이클링 공연"),
+                        "Elit, enim, et arcu at ultrices cursus arcu dictum\n purus...", "@마음으로 그리는 그림 교실"),
 
             // 추가적인 항목들을 원하는 만큼 추가
         )

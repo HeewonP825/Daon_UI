@@ -6,10 +6,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <TextView
+        android:id="@+id/allfeed_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/noto_sans_kr_regular"
+        android:text="@string/allfeed_date"
+        android:textColor="@color/text"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/allfeed_nickname"
+        app:layout_constraintEnd_toStartOf="@+id/allfeed_time"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/allfeed_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/noto_sans_kr_regular"
+        android:text="@string/allfeed_time"
+        android:textColor="@color/text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/allfeed_profile_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:src="@drawable/feed_profile_img"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,17 +54,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/allfeed_profile_img"
         app:layout_constraintStart_toEndOf="@+id/allfeed_profile_img" />
 
-    <ImageButton
-        android:id="@+id/allfeed_like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/white"
-        android:src="@drawable/ic_allfeed_like_btn"
-        app:layout_constraintEnd_toStartOf="@+id/allfeed_more"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/allfeed_introduce"
         android:layout_width="wrap_content"
@@ -52,27 +68,48 @@
         app:layout_constraintStart_toEndOf="@+id/allfeed_profile_img"
         app:layout_constraintTop_toTopOf="@+id/allfeed_nickname" />
 
+    <TextView
+        android:id="@+id/allfeed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/noto_sans_kr_bold"
+        android:text="@string/allfeed_title"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allfeed_introduce" />
+
+
+    <ImageButton
+        android:id="@+id/allfeed_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_allfeed_like_btn"
+        app:layout_constraintEnd_toStartOf="@+id/allfeed_more"
+        app:layout_constraintTop_toBottomOf="@+id/allfeed_date" />
 
     <ImageButton
         android:id="@+id/allfeed_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="2dp"
         android:background="@color/white"
         android:src="@drawable/ic_allfeed_more"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/allfeed_date" />
 
     <ImageView
         android:id="@+id/allfeed_img"
         android:layout_width="match_parent"
         android:layout_height="311dp"
-        android:layout_marginTop="8dp"
         android:scaleType="fitXY"
         android:src="@drawable/all_meeting_img3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allfeed_introduce" />
+        app:layout_constraintTop_toBottomOf="@+id/allfeed_title" />
 
     <TextView
         android:id="@+id/allfeed_context"
