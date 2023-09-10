@@ -95,7 +95,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tabLayout"
             app:tabGravity="fill"
-            android:background="@color/tabbar_title"
+            android:background="#E0E0E0"
             app:tabIndicatorColor="@color/text"
             app:tabMode="fixed"
             app:tabTextColor="@color/mainColor" />

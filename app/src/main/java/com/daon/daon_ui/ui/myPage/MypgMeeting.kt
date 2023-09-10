@@ -18,5 +18,7 @@ data class MypgMeeting(
     val meetingExplain: String,
     val meetingMember: String,
     val meetingOriginalPrice: String,
-    val meetingPrice: String
+    val meetingPrice: String,
+    val meetingSomething: String,
+    val reviewStars: String
 )

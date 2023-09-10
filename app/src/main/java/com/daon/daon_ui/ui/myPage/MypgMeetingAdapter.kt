@@ -22,7 +22,7 @@ class MypgMeetingAdapter(private val meetings: List<MypgMeeting>) : RecyclerView
     override fun getItemCount(): Int = meetings.size
 
     inner class MypgMeetingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding: ItemMeetingBinding = ItemMeetingBinding.bind(itemView)
+        private val binding: ItemMypageMeetingBinding = ItemMypageMeetingBinding.bind(itemView)
 
         fun bind(meeting: MypgMeeting) {
             binding.meetingThumbnail.setImageResource(meeting.meetingImg) // 이미지 동적으로 설정
@@ -36,6 +36,8 @@ class MypgMeetingAdapter(private val meetings: List<MypgMeeting>) : RecyclerView
             binding.meetingMember.text = meeting.meetingMember
             binding.meetingOriginalPrice.text = meeting.meetingOriginalPrice
             binding.meetingPrice.text = meeting.meetingPrice
+            binding.meetingSomething.text = meeting.meetingSomething
+            binding.reviewStars.text = meeting.reviewStars
         }
     }
 }
