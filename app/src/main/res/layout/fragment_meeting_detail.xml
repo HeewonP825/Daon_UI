@@ -46,7 +46,7 @@
         <ImageView
             android:id="@+id/meeting_photo"
             android:layout_width="match_parent"
-            android:layout_height="274dp"
+            android:layout_height="254dp"
             android:scaleType="fitXY"
             android:src="@drawable/sample_meeting_detail"
             app:layout_constraintEnd_toEndOf="parent"
@@ -115,10 +115,11 @@
             android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:src="@drawable/people_num_sample_meeting_detail"
-            app:layout_constraintTop_toBottomOf="@+id/cordinator_introduce"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cordinator_introduce" />
 
 
         <TextView

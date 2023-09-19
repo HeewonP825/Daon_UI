@@ -9,7 +9,9 @@ import com.daon.daon_ui.R
 import androidx.recyclerview.widget.RecyclerView
 import com.daon.daon_ui.databinding.ItemMeetingBinding
 
-class MeetingAdapter(private val meetings: List<Meeting>) : RecyclerView.Adapter<MeetingAdapter.MeetingViewHolder>() {
+class MeetingAdapter(
+    private val meetings: List<Meeting>,
+    private val itemClickListener: ((Meeting) -> Unit)?) : RecyclerView.Adapter<MeetingAdapter.MeetingViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MeetingViewHolder {
         val binding = ItemMeetingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,6 +29,10 @@ class MeetingAdapter(private val meetings: List<Meeting>) : RecyclerView.Adapter
         private val binding: ItemMeetingBinding = ItemMeetingBinding.bind(itemView)
 
         fun bind(meeting: Meeting) {
+            itemView.setOnClickListener {
+                itemClickListener?.invoke(meeting)
+            }
+
             binding.meetingThumbnail.setImageResource(meeting.meetingImg) // 이미지 동적으로 설정
             binding.meetingLocation.text = meeting.meetingLocation
             binding.meetingDate.text = meeting.meetingDate

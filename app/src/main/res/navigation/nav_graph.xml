@@ -9,13 +9,20 @@
         android:id="@+id/navigation_home"
         android:name="com.daon.daon_ui.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeFragment_to_MeetingDetailFragment"
+            app:destination="@id/meeting_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_allMeeting"
         android:name="com.daon.daon_ui.ui.allMeeting.AllMeetingFragment"
         android:label="@string/title_allMeeting"
         tools:layout="@layout/fragment_all_meeting">
+        <action
+            android:id="@+id/action_AllMeetingFragment_to_MeetingDetailFragment"
+            app:destination="@id/meeting_detail" />
         <action
             android:id="@+id/action_AllMeetingFragment_to_AddAllMeetingFragment"
             app:destination="@id/add_all_meeting" />
@@ -37,6 +44,13 @@
         android:id="@+id/add_all_meeting"
         android:name="com.daon.daon_ui.ui.allMeeting.AddNewMeetingFragment"
         tools:layout="@layout/fragment_add_new_meeting" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeting_detail"
+        android:name="com.daon.daon_ui.ui.allMeeting.MeetingDetailFragment"
+        tools:layout="@layout/fragment_meeting_detail" >
 
     </fragment>
 

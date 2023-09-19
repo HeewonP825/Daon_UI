@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.daon.daon_ui.R
+import java.io.Serializable
 
 data class Meeting(
     val meetingImg: Int,
@@ -19,4 +20,4 @@ data class Meeting(
     val meetingMember: String,
     val meetingOriginalPrice: String,
     val meetingPrice: String
-    )
+    ) : Serializable // Serializable 인터페이스 구현 추가

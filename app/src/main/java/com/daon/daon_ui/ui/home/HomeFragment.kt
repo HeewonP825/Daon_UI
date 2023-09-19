@@ -11,9 +11,15 @@ import android.widget.TextView
 import android.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.daon.daon_ui.MainActivity
 import com.daon.daon_ui.databinding.FragmentHomeBinding
+import com.daon.daon_ui.databinding.ItemMeetingBinding
+import com.daon.daon_ui.ui.allMeeting.AllMeetingFragmentDirections
+import com.daon.daon_ui.ui.allMeeting.MeetingDetailFragment
 
 class HomeFragment : Fragment() {
 
@@ -36,13 +42,29 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        val navController = findNavController()
+
 //        val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
 //        }
 
         // RecyclerView 초기화
-        meetingAdapter = MeetingAdapter(getSampleMeetings()) // 여러 항목을 가진 데이터 리스트 전달
+        meetingAdapter = MeetingAdapter(getSampleMeetings()) { selectedMeeting ->
+            // 클릭 시 동작할 내용을 여기에 구현
+            val bundle = Bundle()
+            bundle.putSerializable("selectedMeeting", selectedMeeting)
+            val meetingDetailFragment = MeetingDetailFragment()
+            meetingDetailFragment.arguments = bundle
+            navController.navigate(HomeFragmentDirections.actionHomeFragmentToMeetingDetailFragment())
+
+            val toolbar = (requireActivity() as MainActivity).binding.toolbar
+            toolbar.visibility = View.GONE
+
+            val bottomMenu = (requireActivity() as MainActivity).binding.navView
+            bottomMenu.visibility = View.GONE
+        }
+
         binding.homeMeetingRv.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             adapter = meetingAdapter
