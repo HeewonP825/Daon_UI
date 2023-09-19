@@ -38,20 +38,19 @@
         <Button
             android:id="@+id/button"
             android:layout_width="78dp"
-            android:layout_height="26dp"
+            android:layout_height="19dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="29dp"
             android:background="@drawable/bg_mypage_cordinator_btn"
             android:clickable="false"
             android:drawableLeft="@drawable/mypage_cordinator_ic"
-            android:fontFamily="@font/noto_sans_kr_bold"
-            android:gravity="center_horizontal"
             android:paddingLeft="8dp"
             android:paddingRight="4dp"
             android:text="코디네이터"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="10sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent" />
 
