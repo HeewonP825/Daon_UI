@@ -2,13 +2,19 @@ package com.daon.daon_ui.ui.allFeed
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.daon.daon_ui.MainActivity
+import com.daon.daon_ui.R
 import com.daon.daon_ui.databinding.FragmentAllFeedBinding
 import com.daon.daon_ui.ui.home.AllFeedAdapter
 import com.daon.daon_ui.ui.home.Meeting
@@ -50,6 +56,30 @@ class AllFeedFragment : Fragment() {
         return root
     }
 
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        val toolbar = (requireActivity() as AppCompatActivity).supportActionBar?.customView
+//
+//        val dynamicButton = view.findViewById<LinearLayout>(R.id.dynamic_button)
+//        val buttonIcon = view.findViewById<ImageView>(R.id.button_icon)
+//        val buttonText = view.findViewById<TextView>(R.id.button_text)
+//
+//
+//        dynamicButton.setOnClickListener {
+//            // Fragment 변경 코드
+//
+//            // 아이콘과 텍스트 변경
+//            buttonIcon.setImageResource(R.drawable.ic_feed_toolbar_btn)
+//            buttonText.text = "새 피드 작성"
+//
+////            // ActionBar 버튼으로 설정
+////            val activity = requireActivity() as AppCompatActivity
+////            activity.supportActionBar?.setCustomView(dynamicButton)
+////            activity.supportActionBar?.setDisplayShowCustomEnabled(true)
+//        }
+//    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -88,4 +118,5 @@ class AllFeedFragment : Fragment() {
             // 추가적인 항목들을 원하는 만큼 추가
         )
     }
+
 }

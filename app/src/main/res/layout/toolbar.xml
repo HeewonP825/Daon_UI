@@ -12,18 +12,18 @@
     android:theme="@style/ToolbarTheme"
     app:menu="@menu/toolbar_menu">
 
-    <!-- 툴바 내용을 여기에 추가, 예: 버튼 추가 -->
-    <Button
-        android:id="@+id/toolbar_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="툴바 버튼"
-        android:fontFamily="@font/noto_sans_kr_bold"
-        android:textSize="14dp"
-        android:textColor="@color/mainColor"
-        android:drawableLeft="@drawable/ic_allfeed_like_btn"
-        android:drawableTint="@color/mainColor"
-        android:background="@drawable/bg_toolbar_btn"/>
+<!--    &lt;!&ndash; 툴바 내용을 여기에 추가, 예: 버튼 추가 &ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/toolbar_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="툴바 버튼"-->
+<!--        android:fontFamily="@font/noto_sans_kr_bold"-->
+<!--        android:textSize="14dp"-->
+<!--        android:textColor="@color/mainColor"-->
+<!--        android:drawableLeft="@drawable/ic_allfeed_like_btn"-->
+<!--        android:drawableTint="@color/mainColor"-->
+<!--        android:background="@drawable/bg_toolbar_btn"/>-->
 
 </androidx.appcompat.widget.Toolbar>
 

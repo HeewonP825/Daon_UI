@@ -51,14 +51,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:paddingLeft="5dp"
-                android:src="@drawable/ic_allfeed_like_btn"
+                android:src="@drawable/ic_home_toolbar_btn"
                 app:tint="@color/mainColor" />
 
             <TextView
                 android:id="@+id/button_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="툴바 버튼"
+                android:text="고객센터"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
                 android:paddingRight="5dp"

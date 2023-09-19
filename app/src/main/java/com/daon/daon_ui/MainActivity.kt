@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -81,21 +82,25 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         when (item.itemId) {
             R.id.navigation_home -> {
                 setToolbarTitle("다온") // 원하는 타이틀 설정
+                updateToolbarButton(R.drawable.ic_home_toolbar_btn, "고객센터")
                 navigateToFragment(R.id.navigation_home) // 프래그먼트 이동
                 return true
             }
             R.id.navigation_allMeeting -> {
                 setToolbarTitle("모임")
+                updateToolbarButton(R.drawable.ic_feed_toolbar_btn, "새 모임 만들기")
                 navigateToFragment(R.id.navigation_allMeeting)
                 return true
             }
             R.id.navigation_allFeed -> {
                 setToolbarTitle("피드")
+                updateToolbarButton(R.drawable.ic_feed_toolbar_btn, "새 피드 작성")
                 navigateToFragment(R.id.navigation_allFeed)
                 return true
             }
             R.id.navigation_myPage -> {
                 setToolbarTitle("내정보")
+                updateToolbarButton(0, "내 정보 수정")
                 navigateToFragment(R.id.navigation_myPage)
                 return true
             }
@@ -111,6 +116,14 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     private fun navigateToFragment(itemId: Int) {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navController.navigate(itemId)
+    }
+
+    fun updateToolbarButton(iconResId: Int, buttonText: String) {
+        val buttonIcon = findViewById<ImageView>(R.id.button_icon)
+        val buttonTextview = findViewById<TextView>(R.id.button_text)
+
+        buttonIcon.setImageResource(iconResId)
+        buttonTextview.text = buttonText
     }
 
 }
