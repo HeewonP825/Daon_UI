@@ -18,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.daon.daon_ui.MainActivity
 import com.daon.daon_ui.R
 import com.daon.daon_ui.databinding.FragmentAllFeedBinding
+import com.daon.daon_ui.ui.allMeeting.MeetingDetailFragment
 import com.daon.daon_ui.ui.home.AllFeedAdapter
+import com.daon.daon_ui.ui.home.HomeFragmentDirections
 import com.daon.daon_ui.ui.home.Meeting
 import com.daon.daon_ui.ui.home.MeetingAdapter
 
@@ -48,8 +50,24 @@ class AllFeedFragment : Fragment() {
 //            textView.text = it
 //        }
 
+        val navController = findNavController()
+
         // RecyclerView 초기화
-        allfeedAdapter = AllFeedAdapter(getSampleMeetings()) // 여러 항목을 가진 데이터 리스트 전달
+        allfeedAdapter = AllFeedAdapter(getSampleMeetings()) { selectedMeeting ->
+            // 클릭 시 동작할 내용을 여기에 구현
+            val bundle = Bundle()
+            bundle.putSerializable("selectedMeeting", selectedMeeting)
+            val meetingDetailFragment = MeetingDetailFragment()
+            meetingDetailFragment.arguments = bundle
+            navController.navigate(AllFeedFragmentDirections.actionAllFeedFragmentToFeedDetailFragment())
+
+            val toolbar = (requireActivity() as MainActivity).binding.toolbar
+            toolbar.visibility = View.GONE
+
+            val bottomMenu = (requireActivity() as MainActivity).binding.navView
+            bottomMenu.visibility = View.GONE
+        }
+
         binding.allfeedRv.apply {
             layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             adapter = allfeedAdapter

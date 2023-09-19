@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.daon.daon_ui.databinding.ItemFeedBinding
 import com.daon.daon_ui.ui.allFeed.AllFeed
 
-class AllFeedAdapter(private val allFeeds: List<AllFeed>) : RecyclerView.Adapter<AllFeedAdapter.AllFeedViewHolder>() {
+class AllFeedAdapter(
+    private val allFeeds: List<AllFeed>,
+    private val itemClickListener: ((AllFeed) -> Unit)?) : RecyclerView.Adapter<AllFeedAdapter.AllFeedViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllFeedViewHolder {
         val binding = ItemFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -28,6 +30,10 @@ class AllFeedAdapter(private val allFeeds: List<AllFeed>) : RecyclerView.Adapter
         private val binding: ItemFeedBinding = ItemFeedBinding.bind(itemView)
 
         fun bind(allfeed: AllFeed) {
+
+            itemView.setOnClickListener {
+                itemClickListener?.invoke(allfeed)
+            }
 
             // 이미지를 숨길 조건을 확인하고 숨김 처리
             if (allfeed.shouldHideImage) {

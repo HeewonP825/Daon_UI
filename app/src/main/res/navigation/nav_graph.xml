@@ -32,7 +32,11 @@
         android:id="@+id/navigation_allFeed"
         android:name="com.daon.daon_ui.ui.allFeed.AllFeedFragment"
         android:label="@string/title_allFeed"
-        tools:layout="@layout/fragment_all_feed" />
+        tools:layout="@layout/fragment_all_feed">
+        <action
+            android:id="@+id/action_AllFeedFragment_to_FeedDetailFragment"
+            app:destination="@id/feed_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_myPage"
@@ -51,7 +55,12 @@
         android:id="@+id/meeting_detail"
         android:name="com.daon.daon_ui.ui.allMeeting.MeetingDetailFragment"
         tools:layout="@layout/fragment_meeting_detail" >
+    </fragment>
 
+    <fragment
+        android:id="@+id/feed_detail"
+        android:name="com.daon.daon_ui.ui.allFeed.FeedDetailFragment"
+        tools:layout="@layout/fragment_feed_detail">
     </fragment>
 
 </navigation>

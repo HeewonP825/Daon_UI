@@ -1,5 +1,7 @@
 package com.daon.daon_ui.ui.allFeed
 
+import java.io.Serializable
+
 data class AllFeed(
     //val allfeedProfileImg: Int,
     val allfeedNickmane: String,
@@ -10,4 +12,4 @@ data class AllFeed(
     val allfeedImg: Int,
     val allfeedContext: String,
     val allfeedTag: String
-)
+) : Serializable // Serializable 인터페이스 구현 추가
