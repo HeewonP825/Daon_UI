@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.daon.daon_ui.MainActivity
 import com.daon.daon_ui.R
 import com.daon.daon_ui.databinding.FragmentAddNewMeetingBinding
 import com.daon.daon_ui.databinding.FragmentAllMeetingBinding
@@ -36,6 +37,12 @@ class AddNewMeetingFragment : Fragment() {
 
         binding.toolbarBackbtn.setOnClickListener {
             navController.navigateUp()
+
+            val toolbar = (requireActivity() as MainActivity).binding.toolbar
+            toolbar.visibility = View.VISIBLE
+
+            val bottomMenu = (requireActivity() as MainActivity).binding.navView
+            bottomMenu.visibility = View.VISIBLE
 
         }
 
