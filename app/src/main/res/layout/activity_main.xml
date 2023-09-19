@@ -35,6 +35,39 @@
             android:gravity="left"
             android:layout_marginLeft="10dp"/>
 
+        <!-- 툴바 내용을 여기에 추가 -->
+        <LinearLayout
+            android:id="@+id/dynamic_button"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_toolbar_btn"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="end">
+
+            <ImageView
+                android:id="@+id/button_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="5dp"
+                android:src="@drawable/ic_allfeed_like_btn"
+                app:tint="@color/mainColor" />
+
+            <TextView
+                android:id="@+id/button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="툴바 버튼"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:paddingRight="5dp"
+                android:textColor="@color/mainColor"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
 
     </androidx.appcompat.widget.Toolbar>
 
