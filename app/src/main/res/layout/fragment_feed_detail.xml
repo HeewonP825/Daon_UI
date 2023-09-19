@@ -43,6 +43,152 @@
 
         </Toolbar>
 
+        <TextView
+            android:id="@+id/allfeed_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="@string/allfeed_date"
+            android:textColor="@color/text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/allfeed_time"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+        <TextView
+            android:id="@+id/allfeed_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="@string/allfeed_time"
+            android:textColor="@color/text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+        <ImageView
+            android:id="@+id/allfeed_profile_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/feed_profile_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+        <TextView
+            android:id="@+id/allfeed_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="@string/allfeed_nickname"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/allfeed_profile_img"
+            app:layout_constraintStart_toEndOf="@+id/allfeed_profile_img" />
+
+        <TextView
+            android:id="@+id/allfeed_introduce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="@string/allfeed_introduce"
+            android:textColor="@color/text"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/allfeed_profile_img"
+            app:layout_constraintStart_toEndOf="@+id/allfeed_profile_img"
+            app:layout_constraintTop_toTopOf="@+id/allfeed_nickname" />
+
+        <ImageButton
+            android:id="@+id/allfeed_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_allfeed_like_btn"
+            app:layout_constraintEnd_toStartOf="@+id/allfeed_more"
+            app:layout_constraintTop_toBottomOf="@+id/allfeed_date" />
+
+        <ImageButton
+            android:id="@+id/allfeed_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_allfeed_more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allfeed_date" />
+
+        <ImageView
+            android:id="@+id/allfeed_img"
+            android:layout_width="match_parent"
+            android:layout_height="311dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/allfeed_img1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allfeed_introduce" />
+
+        <TextView
+            android:id="@+id/allfeed_context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="@string/allfeed_context"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allfeed_img" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="@string/allfeed_context"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/allfeed_context" />
+
+        <TextView
+            android:id="@+id/allfeed_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/noto_sans_kr_bold"
+            android:text="@string/allfeed_tag"
+            android:textColor="@color/mainColor"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/main_button_enabled_stroke"
+            app:layout_constraintTop_toBottomOf="@+id/allfeed_tag" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
