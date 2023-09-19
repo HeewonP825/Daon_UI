@@ -8,11 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.daon.daon_ui.R
@@ -152,6 +155,17 @@ class AllMeetingFragment : Fragment() {
 
         return root
     }
+//
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//
+//        val button = view.findViewById<Button>(R.id.dynamic_button)
+//
+//        button.setOnClickListener {
+//            // 새로운 프래그먼트로 이동
+//            findNavController().navigate(R.id.action_AllMeetingFragment_to_AddAllMeetingFragment)
+//        }
+//    }
 
     @SuppressLint("MissingInflatedId")
     private fun createTabView(text: String, iconResId: Int): View {

@@ -1,11 +1,14 @@
 package com.daon.daon_ui
 
+import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +16,9 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -22,6 +27,8 @@ import com.daon.daon_ui.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener, ViewTreeObserver.OnPreDrawListener {
 
     private val splashContent by lazy { findViewById<View>(android.R.id.content) }
+
+    private lateinit var navController: NavController
 
     private lateinit var binding: ActivityMainBinding
 
@@ -78,17 +85,32 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onPreDraw(): Boolean {
         return true
     }
+    @SuppressLint("WrongViewCast")
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        val button = findViewById<LinearLayout>(R.id.dynamic_button)
+
         when (item.itemId) {
             R.id.navigation_home -> {
                 setToolbarTitle("다온") // 원하는 타이틀 설정
                 updateToolbarButton(R.drawable.ic_home_toolbar_btn, "고객센터")
                 navigateToFragment(R.id.navigation_home) // 프래그먼트 이동
+                showBottomNavigation()
+                showToolbar()
                 return true
             }
             R.id.navigation_allMeeting -> {
                 setToolbarTitle("모임")
                 updateToolbarButton(R.drawable.ic_feed_toolbar_btn, "새 모임 만들기")
+
+                button.setOnClickListener {
+                    // 새로운 프래그먼트로 이동
+                    //findNavController().navigate(R.id.action_AllMeetingFragment_to_AddAllMeetingFragment)
+                    navigateToFragment(R.id.add_all_meeting)
+                    hideBottomNavigation()
+                    hideToolbar()
+                }
+
                 navigateToFragment(R.id.navigation_allMeeting)
                 return true
             }
@@ -96,12 +118,16 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 setToolbarTitle("피드")
                 updateToolbarButton(R.drawable.ic_feed_toolbar_btn, "새 피드 작성")
                 navigateToFragment(R.id.navigation_allFeed)
+                showBottomNavigation()
+                showToolbar()
                 return true
             }
             R.id.navigation_myPage -> {
                 setToolbarTitle("내정보")
                 updateToolbarButton(0, "내 정보 수정")
                 navigateToFragment(R.id.navigation_myPage)
+                showBottomNavigation()
+                showToolbar()
                 return true
             }
         }
@@ -118,12 +144,45 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         navController.navigate(itemId)
     }
 
+    override fun onBackPressed() {
+        // 여기에 원하는 동작을 구현합니다.
+        // 예를 들어, 특정 조건에 따라 다른 화면으로 이동하거나 앱 종료 로직을 추가할 수 있습니다.
+        navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+        if (!navController.popBackStack()) {
+            super.onBackPressed()
+        } else {
+            showToolbar()
+            showBottomNavigation()
+        }
+
+//        showToolbar()
+//        showBottomNavigation()
+//        navController.navigateUp()
+    }
+
     fun updateToolbarButton(iconResId: Int, buttonText: String) {
         val buttonIcon = findViewById<ImageView>(R.id.button_icon)
         val buttonTextview = findViewById<TextView>(R.id.button_text)
 
         buttonIcon.setImageResource(iconResId)
         buttonTextview.text = buttonText
+    }
+
+    fun hideBottomNavigation() {
+        binding.navView.visibility = View.GONE
+    }
+
+    fun showBottomNavigation() {
+        binding.navView.visibility = View.VISIBLE
+    }
+
+    fun showToolbar() {
+        binding.toolbar.visibility = View.VISIBLE
+    }
+
+    fun hideToolbar() {
+        binding.toolbar.visibility = View.GONE
     }
 
 }
