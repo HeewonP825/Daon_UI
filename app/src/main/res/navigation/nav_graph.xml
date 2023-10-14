@@ -58,6 +58,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/add_new_feed"
+        android:name="com.daon.daon_ui.ui.allFeed.AddNewFreedFragment"
+        tools:layout="@layout/fragment_add_new_freed">
+    </fragment>
+
+    <fragment
         android:id="@+id/meeting_detail"
         android:name="com.daon.daon_ui.ui.allMeeting.MeetingDetailFragment"
         tools:layout="@layout/fragment_meeting_detail" >

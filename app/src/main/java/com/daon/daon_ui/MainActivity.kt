@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 button.setOnClickListener {
                     // 새로운 프래그먼트로 이동
                     //findNavController().navigate(R.id.action_AllMeetingFragment_to_AddAllMeetingFragment)
-                    navigateToFragment(R.id.add_all_meeting)
+                    navigateToFragment(R.id.add_new_feed)
                     hideBottomNavigation()
                     hideToolbar()
                 }
