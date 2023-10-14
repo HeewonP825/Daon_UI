@@ -52,6 +52,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/edit_mypage_fragment"
+        android:name="com.daon.daon_ui.ui.myPage.EditMyPageFragment"
+        tools:layout="@layout/fragment_edit_my_page">
+    </fragment>
+
+    <fragment
         android:id="@+id/meeting_detail"
         android:name="com.daon.daon_ui.ui.allMeeting.MeetingDetailFragment"
         tools:layout="@layout/fragment_meeting_detail" >

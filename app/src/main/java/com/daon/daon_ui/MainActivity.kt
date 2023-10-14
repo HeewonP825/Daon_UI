@@ -117,6 +117,15 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             R.id.navigation_allFeed -> {
                 setToolbarTitle("피드")
                 updateToolbarButton(R.drawable.ic_feed_toolbar_btn, "새 피드 작성")
+
+                button.setOnClickListener {
+                    // 새로운 프래그먼트로 이동
+                    //findNavController().navigate(R.id.action_AllMeetingFragment_to_AddAllMeetingFragment)
+                    navigateToFragment(R.id.add_all_meeting)
+                    hideBottomNavigation()
+                    hideToolbar()
+                }
+
                 navigateToFragment(R.id.navigation_allFeed)
                 showBottomNavigation()
                 showToolbar()
@@ -125,6 +134,15 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             R.id.navigation_myPage -> {
                 setToolbarTitle("내정보")
                 updateToolbarButton(0, "내 정보 수정")
+
+                button.setOnClickListener {
+                    // 새로운 프래그먼트로 이동
+                    //findNavController().navigate(R.id.action_AllMeetingFragment_to_AddAllMeetingFragment)
+                    navigateToFragment(R.id.edit_mypage_fragment)
+                    hideBottomNavigation()
+                    hideToolbar()
+                }
+
                 navigateToFragment(R.id.navigation_myPage)
                 showBottomNavigation()
                 showToolbar()
