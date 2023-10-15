@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.daon.daon_ui.MainActivity
@@ -31,6 +33,15 @@ class LoginFragment : Fragment() {
         // navController 초기화
         navController = findNavController()
 
+        val barColor = ContextCompat.getColor(requireContext(), R.color.white)
+
+        with(requireActivity().window) {
+            statusBarColor = barColor
+        }
+
+        val windowInsetsController = ViewCompat.getWindowInsetsController(requireActivity().window.decorView)
+        windowInsetsController?.isAppearanceLightStatusBars = true
+
         val mainActivity = requireActivity() as MainActivity
         mainActivity.hideBottomNavigation()
         mainActivity.hideToolbar()
@@ -45,6 +56,14 @@ class LoginFragment : Fragment() {
 
         binding.lostPassword.setOnClickListener {
             navController.navigate(R.id.action_LoginFragment_to_LostPassWordFragment)
+
+            val mainActivity = requireActivity() as MainActivity
+            mainActivity.hideBottomNavigation()
+            mainActivity.hideToolbar()
+        }
+
+        binding.joinBtn.setOnClickListener {
+            navController.navigate(R.id.action_LoginFragment_to_JoinFragment1)
 
             val mainActivity = requireActivity() as MainActivity
             mainActivity.hideBottomNavigation()

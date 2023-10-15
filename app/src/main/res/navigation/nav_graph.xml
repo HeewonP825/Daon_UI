@@ -85,6 +85,9 @@
         <action
             android:id="@+id/action_LoginFragment_to_LostPassWordFragment"
             app:destination="@id/lost_password" />
+        <action
+            android:id="@+id/action_LoginFragment_to_JoinFragment1"
+            app:destination="@id/join_fragment_1" />
     </fragment>
 
     <fragment
@@ -95,6 +98,13 @@
         <action
             android:id="@+id/action_LostPassWordFragment_to_HomeFragment"
             app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_1"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment1"
+        tools:layout="@layout/fragment_join1">
+
     </fragment>
 
 </navigation>
