@@ -82,6 +82,19 @@
         <action
             android:id="@+id/action_LoginFragment_to_HomeFragment"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_LoginFragment_to_LostPassWordFragment"
+            app:destination="@id/lost_password" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lost_password"
+        android:name="com.daon.daon_ui.ui.login.LostPassWordFragment"
+        tools:layout="@layout/fragment_lost_pass_word">
+
+        <action
+            android:id="@+id/action_LostPassWordFragment_to_HomeFragment"
+            app:destination="@id/navigation_home" />
     </fragment>
 
 </navigation>

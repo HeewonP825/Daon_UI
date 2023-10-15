@@ -9,11 +9,11 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.daon.daon_ui.MainActivity
 import com.daon.daon_ui.R
-import com.daon.daon_ui.databinding.FragmentAddNewMeetingBinding
 import com.daon.daon_ui.databinding.FragmentLoginBinding
+import com.daon.daon_ui.databinding.FragmentLostPassWordBinding
 
-class LoginFragment : Fragment() {
-    private var _binding: FragmentLoginBinding? = null
+class LostPassWordFragment : Fragment() {
+    private var _binding: FragmentLostPassWordBinding? = null
 
     private lateinit var navController: NavController
 
@@ -26,7 +26,7 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentLostPassWordBinding.inflate(inflater, container, false)
 
         // navController 초기화
         navController = findNavController()
@@ -35,21 +35,14 @@ class LoginFragment : Fragment() {
         mainActivity.hideBottomNavigation()
         mainActivity.hideToolbar()
 
-        binding.loginBtn.setOnClickListener {
-            navController.navigate(R.id.action_LoginFragment_to_HomeFragment)
+        binding.submitBtn.setOnClickListener {
+            navController.navigate(R.id.action_LostPassWordFragment_to_HomeFragment)
 
             val mainActivity = requireActivity() as MainActivity
             mainActivity.showBottomNavigation()
             mainActivity.showToolbar()
         }
 
-        binding.lostPassword.setOnClickListener {
-            navController.navigate(R.id.action_LoginFragment_to_LostPassWordFragment)
-
-            val mainActivity = requireActivity() as MainActivity
-            mainActivity.hideBottomNavigation()
-            mainActivity.hideToolbar()
-        }
 
         val root: View = binding.root
 
