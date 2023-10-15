@@ -11,7 +11,8 @@
         android:id="@+id/meeting_thumbnail"
         android:layout_width="96dp"
         android:layout_height="144dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/meeting_sample1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +25,9 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_location"
-        android:textSize="11sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="9dp"
+        android:autoSizeMaxTextSize="11dp"
         app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:text="@string/meeting_time"
         android:textSize="11sp"
@@ -95,7 +99,9 @@
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_title"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="11dp"
+        android:autoSizeMaxTextSize="14dp"
         app:layout_constraintBottom_toTopOf="@+id/meeting_detail"
         app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
         app:layout_constraintTop_toBottomOf="@+id/meeting_tag1" />
@@ -105,110 +111,119 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
+        android:autoSizeMaxTextSize="13sp"
+        android:autoSizeMinTextSize="9sp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:text="@string/meeting_explain"
         android:textColor="@color/black"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
         app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
         app:layout_constraintTop_toBottomOf="@+id/meeting_tag2" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="58dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/participate_member_sample"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
         app:layout_constraintStart_toEndOf="@+id/meeting_thumbnail"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:autoSizeMaxTextSize="13dp"
+        android:autoSizeMinTextSize="9dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:gravity="center"
         android:text="@string/meeting_avail_member"
         android:textColor="#333333"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
+        app:layout_constraintBottom_toTopOf="@+id/view14"
+        app:layout_constraintEnd_toStartOf="@+id/meeting_member" />
 
     <TextView
         android:id="@+id/meeting_member"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="7dp"
+        android:autoSizeMaxTextSize="13dp"
+        android:autoSizeMinTextSize="9dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_member"
         android:textColor="#333333"
-        android:textSize="13dp"
-        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
+        app:layout_constraintBottom_toTopOf="@+id/view14"
+        app:layout_constraintEnd_toStartOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="7dp"
+        android:autoSizeMaxTextSize="13dp"
+        android:autoSizeMinTextSize="8dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:text="@string/meeting_member_unit"
         android:textColor="#333333"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
-        app:layout_constraintStart_toEndOf="@+id/meeting_member"
-        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
+        app:layout_constraintBottom_toTopOf="@+id/view14"
+        app:layout_constraintEnd_toStartOf="@+id/meeting_original_price" />
 
     <TextView
         android:id="@+id/meeting_original_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="7dp"
+        android:autoSizeMaxTextSize="13dp"
+        android:autoSizeMinTextSize="8dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/noto_sans_kr_regular"
         android:text="@string/meeting_original_price"
         android:textColor="#FF1717"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
+        app:layout_constraintBottom_toTopOf="@+id/view14"
+        app:layout_constraintEnd_toStartOf="@+id/meeting_price" />
 
     <TextView
         android:id="@+id/meeting_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="8dp"
+        android:autoSizeMaxTextSize="14dp"
+        android:autoSizeMinTextSize="9dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_price"
         android:textColor="#333333"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
-        app:layout_constraintStart_toEndOf="@+id/meeting_original_price"
-        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
+        app:layout_constraintBottom_toTopOf="@+id/view14"
+        app:layout_constraintEnd_toStartOf="@+id/textView32" />
 
     <TextView
+        android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:autoSizeMaxTextSize="14dp"
+        android:autoSizeMinTextSize="9dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/noto_sans_kr_bold"
         android:text="@string/meeting_price_unit"
         android:textColor="#333333"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/meeting_thumbnail"
-        app:layout_constraintStart_toEndOf="@+id/meeting_price"
-        app:layout_constraintTop_toBottomOf="@+id/meeting_detail" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
 
     <View
+        android:id="@+id/view14"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="16dp"
