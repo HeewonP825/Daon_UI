@@ -54,6 +54,22 @@ class JoinFragment8 : Fragment() {
             mainActivity.hideToolbar()
         }
 
+        binding.skipBtn.setOnClickListener {
+            navController.navigate(R.id.action_JoinFragment8_to_HomeFragment)
+
+            val mainActivity = requireActivity() as MainActivity
+            mainActivity.showBottomNavigation()
+            mainActivity.showToolbar()
+
+            val barColor = ContextCompat.getColor(requireContext(), R.color.white)
+
+            with(requireActivity().window) {
+                statusBarColor = barColor
+            }
+
+            val windowInsetsController = ViewCompat.getWindowInsetsController(requireActivity().window.decorView)
+            windowInsetsController?.isAppearanceLightStatusBars = true
+        }
 
         val root: View = binding.root
 

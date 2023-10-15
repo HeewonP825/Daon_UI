@@ -142,6 +142,10 @@
             android:id="@+id/action_JoinFragment4_to_JoinFragment5"
             app:destination="@id/join_fragment_5" />
 
+        <action
+            android:id="@+id/action_JoinFragment4_to_HomeFragment"
+            app:destination="@id/navigation_home" />
+
     </fragment>
 
     <fragment
@@ -153,6 +157,10 @@
             android:id="@+id/action_JoinFragment5_to_JoinFragment6"
             app:destination="@id/join_fragment_6" />
 
+        <action
+            android:id="@+id/action_JoinFragment5_to_HomeFragment"
+            app:destination="@id/navigation_home" />
+
     </fragment>
 
     <fragment
@@ -163,6 +171,10 @@
         <action
             android:id="@+id/action_JoinFragment6_to_JoinFragment7"
             app:destination="@id/join_fragment_7" />
+
+        <action
+            android:id="@+id/action_JoinFragment6_to_HomeFragment"
+            app:destination="@id/navigation_home" />
 
     </fragment>
 
@@ -176,6 +188,10 @@
             android:id="@+id/action_JoinFragment7_to_JoinFragment8"
             app:destination="@id/join_fragment_8" />
 
+        <action
+            android:id="@+id/action_JoinFragment7_to_HomeFragment"
+            app:destination="@id/navigation_home" />
+
     </fragment>
 
     <fragment
@@ -186,6 +202,10 @@
         <action
             android:id="@+id/action_JoinFragment8_to_JoinFragment9"
             app:destination="@id/join_fragment_9" />
+
+        <action
+            android:id="@+id/action_JoinFragment8_to_HomeFragment"
+            app:destination="@id/navigation_home" />
 
     </fragment>
 
