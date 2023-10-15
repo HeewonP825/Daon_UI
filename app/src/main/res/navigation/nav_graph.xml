@@ -195,8 +195,8 @@
         tools:layout="@layout/fragment_join9">
 
         <action
-            android:id="@+id/action_JoinFragment9_to_LoginFragment"
-            app:destination="@id/navigaton_login" />
+            android:id="@+id/action_JoinFragment9_to_HomeFragment"
+            app:destination="@id/navigation_home" />
 
     </fragment>
 

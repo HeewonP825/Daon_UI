@@ -46,21 +46,14 @@ class JoinFragment8 : Fragment() {
         val windowInsetsController = ViewCompat.getWindowInsetsController(requireActivity().window.decorView)
         windowInsetsController?.isAppearanceLightStatusBars = true
 
-//        binding.nextBtn.setOnClickListener {
-//            navController.navigate(R.id.action_JoinFragment1_to_JoinFragment2)
-//
-//            val mainActivity = requireActivity() as MainActivity
-//            mainActivity.hideBottomNavigation()
-//            mainActivity.hideToolbar()
-//        }
-
         binding.nextBtn.setOnClickListener {
-            //navController.navigate(R.id.action_JoinFragment8_to_JoinFragment7)
+            navController.navigate(R.id.action_JoinFragment8_to_JoinFragment9)
 
             val mainActivity = requireActivity() as MainActivity
             mainActivity.hideBottomNavigation()
             mainActivity.hideToolbar()
         }
+
 
         val root: View = binding.root
 
