@@ -160,7 +160,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/myCheckBox2" />
 
-        <Button
+         <Button
             android:id="@+id/next_btn"
             android:layout_width="match_parent"
             android:layout_height="48dp"

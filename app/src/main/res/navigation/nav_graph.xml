@@ -105,6 +105,17 @@
         android:name="com.daon.daon_ui.ui.join.JoinFragment1"
         tools:layout="@layout/fragment_join1">
 
+        <action
+            android:id="@+id/action_JoinFragment1_to_JoinFragment2"
+            app:destination="@id/join_fragment_2" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_2"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment2"
+        tools:layout="@layout/fragment_join2">
+
     </fragment>
 
 </navigation>
