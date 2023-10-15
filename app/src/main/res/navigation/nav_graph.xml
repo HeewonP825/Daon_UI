@@ -75,4 +75,13 @@
         tools:layout="@layout/fragment_feed_detail">
     </fragment>
 
+    <fragment
+        android:id="@+id/navigaton_login"
+        android:name="com.daon.daon_ui.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_LoginFragment_to_HomeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
 </navigation>

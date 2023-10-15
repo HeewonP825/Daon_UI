@@ -18,6 +18,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -31,6 +32,21 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     private lateinit var navController: NavController
 
     lateinit var binding: ActivityMainBinding
+
+    private var currFragment = R.id.navigaton_login
+
+    private val onDestinationChangedListener =
+        NavController.OnDestinationChangedListener { _, destination, _ ->
+            currFragment = destination.id
+            when (currFragment) {
+                R.id.navigaton_login -> {
+                    binding.navView.visibility = View.GONE
+                }
+                else -> {
+                    binding.navView.visibility = View.VISIBLE
+                }
+            }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,9 +75,17 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_allMeeting, R.id.navigation_allFeed, R.id.navigation_myPage
+                R.id.navigation_home,
+                R.id.navigation_allMeeting,
+                R.id.navigation_allFeed,
+                R.id.navigation_myPage
             )
         )
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        this.navController = navHostFragment.navController
+        navController.addOnDestinationChangedListener(onDestinationChangedListener)
 
         //setupActionBarWithNavController(navController, appBarConfiguration)
         // 폰트 파일 로드
@@ -77,6 +101,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 //            }
 //        }
         navView.setupWithNavController(navController)
+        navController.navigate(R.id.navigaton_login)
+        hideBottomNavigation()
+        hideToolbar()
+
         navView.setOnNavigationItemSelectedListener { item ->
             onNavigationItemSelected(item)
         }
