@@ -35,6 +35,7 @@ class MypgMeetingAdapter(private val meetings: List<MypgMeeting>) : RecyclerView
             binding.meetingDetail.text = meeting.meetingExplain
             binding.meetingMember.text = meeting.meetingMember
             binding.meetingOriginalPrice.text = meeting.meetingOriginalPrice
+            binding.meetingOriginalPrice.paintFlags = binding.meetingOriginalPrice.paintFlags
             binding.meetingPrice.text = meeting.meetingPrice
             binding.meetingSomething.text = meeting.meetingSomething
             binding.reviewStars.text = meeting.reviewStars
