@@ -1,5 +1,6 @@
 package com.daon.daon_ui.ui.allMeeting
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
@@ -31,6 +33,7 @@ class AddNewMeetingFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -93,7 +96,26 @@ class AddNewMeetingFragment : Fragment() {
         }
 
         binding.submitBtn.setOnClickListener {
-            showSuccessDialog()
+
+            val dialogView = LayoutInflater.from(context).inflate(R.layout.add_meeting_success_alert, null)
+
+            val builder = AlertDialog.Builder(context)
+            builder.setView(dialogView)
+
+            val alertDialog = builder.create()
+            alertDialog.show()
+
+            val customButton = dialogView.findViewById<Button>(R.id.close_btn)
+            customButton.setOnClickListener {
+                alertDialog.dismiss() // 다이얼로그를 닫습니다.
+
+                navController.navigateUp()
+
+                val mainActivity = requireActivity() as MainActivity
+                mainActivity.showBottomNavigation()
+                mainActivity.showToolbar()
+            }
+
         }
 
         val root: View = binding.root
@@ -122,26 +144,6 @@ class AddNewMeetingFragment : Fragment() {
             view.startAnimation(scaleAnimation)
             targetView.visibility = View.VISIBLE
         }
-    }
-
-    private fun showSuccessDialog() {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("새 모임 등록 성공")  // 제목 설정
-        builder.setMessage("작성하신 새 모임 등록이 성공적으로 완\n료되었습니다.")  // 메시지 설정
-
-        builder.setPositiveButton("닫기") { dialog: DialogInterface, which: Int ->
-            // "닫기" 버튼 클릭 시 실행할 동작을 여기에 추가
-            dialog.dismiss()  // 다이얼로그 닫기
-            navController.navigateUp()
-
-            val mainActivity = requireActivity() as MainActivity
-            mainActivity.showBottomNavigation()
-            mainActivity.showToolbar()
-        }
-
-        val dialog = builder.create()
-        dialog.show()
-
     }
 
 }
