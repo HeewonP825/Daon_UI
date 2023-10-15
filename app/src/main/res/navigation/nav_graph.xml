@@ -116,6 +116,88 @@
         android:name="com.daon.daon_ui.ui.join.JoinFragment2"
         tools:layout="@layout/fragment_join2">
 
+        <action
+            android:id="@+id/action_JoinFragment2_to_JoinFragment3"
+            app:destination="@id/join_fragment_3" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_3"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment3"
+        tools:layout="@layout/fragment_join3">
+
+        <action
+            android:id="@+id/action_JoinFragment3_to_JoinFragment4"
+            app:destination="@id/join_fragment_4" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_4"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment4"
+        tools:layout="@layout/fragment_join4">
+
+        <action
+            android:id="@+id/action_JoinFragment4_to_JoinFragment5"
+            app:destination="@id/join_fragment_5" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_5"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment5"
+        tools:layout="@layout/fragment_join5">
+
+        <action
+            android:id="@+id/action_JoinFragment5_to_JoinFragment6"
+            app:destination="@id/join_fragment_6" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_6"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment6"
+        tools:layout="@layout/fragment_join6">
+
+        <action
+            android:id="@+id/action_JoinFragment6_to_JoinFragment7"
+            app:destination="@id/join_fragment_7" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/join_fragment_7"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment7"
+        tools:layout="@layout/fragment_join7">
+
+        <action
+            android:id="@+id/action_JoinFragment7_to_JoinFragment8"
+            app:destination="@id/join_fragment_8" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_8"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment8"
+        tools:layout="@layout/fragment_join8">
+
+        <action
+            android:id="@+id/action_JoinFragment8_to_JoinFragment9"
+            app:destination="@id/join_fragment_9" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/join_fragment_9"
+        android:name="com.daon.daon_ui.ui.join.JoinFragment9"
+        tools:layout="@layout/fragment_join9">
+
+        <action
+            android:id="@+id/action_JoinFragment9_to_LoginFragment"
+            app:destination="@id/navigaton_login" />
+
     </fragment>
 
 </navigation>

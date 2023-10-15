@@ -41,6 +41,10 @@ class JoinFragment2 : Fragment() {
         // navController 초기화
         navController = findNavController()
 
+        val mainActivity = requireActivity() as MainActivity
+        mainActivity.hideBottomNavigation()
+        mainActivity.hideToolbar()
+
         val barColor = ContextCompat.getColor(requireContext(), R.color.toolbar_sub_color)
 
         with(requireActivity().window) {
@@ -108,6 +112,14 @@ class JoinFragment2 : Fragment() {
                 mainActivity.hideToolbar()
             }
 
+        }
+
+        binding.nextBtn.setOnClickListener {
+            navController.navigate(R.id.action_JoinFragment2_to_JoinFragment3)
+
+            val mainActivity = requireActivity() as MainActivity
+            mainActivity.hideBottomNavigation()
+            mainActivity.hideToolbar()
         }
 
         val root: View = binding.root
